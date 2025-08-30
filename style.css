@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+
+:root {
+    --primary: #FDC58B;
+    --secondary: #A7E8E5;
+    --accent: #F7B0D1;
+    --dark: #333;
+    --light: #fdfdfd;
+}
+
+body {
+    margin: 0;
+    font-family: 'Poppins', sans-serif;
+    color: var(--dark);
+    line-height: 1.6;
+    background-color: var(--light);
+}
+
+header {
+    /* Replace external hero image with a soft gradient to avoid storing binary assets.
+       The gradient transitions between the primary and accent colours defined in the root.
+       This keeps the design lightweight and ensures the page loads quickly without downloading an external image. */
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    color: var(--light);
+    position: relative;
+    min-height: 60vh;
+}
+
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+}
+
+/* Stylise the textual logo. It uses a larger font and white colour to contrast the gradient header. */
+.logo-text {
+    font-size: 1.8rem;
+    font-weight: 700;
+    color: var(--light);
+    letter-spacing: -0.5px;
+}
+
+nav .logo {
+    /* Remove default image sizing for logos. Logo is now represented as text via the .logo-text class. */
+    width: auto;
+    height: auto;
+}
+
+nav .nav-links {
+    list-style: none;
+    display: flex;
+    gap: 1.5rem;
+    margin: 0;
+}
+
+nav .nav-links li {
+    margin: 0;
+}
+
+nav .nav-links a {
+    color: var(--light);
+    text-decoration: none;
+    font-weight: 600;
+}
+
+.hero {
+    text-align: center;
+    margin-top: 12vh;
+    padding: 2rem;
+    background: rgba(255, 255, 255, 0.7);
+    display: inline-block;
+    border-radius: 8px;
+}
+
+.hero h1 {
+    font-size: 2.5rem;
+    margin-bottom: 0.5rem;
+    color: var(--dark);
+}
+
+.hero p {
+    font-size: 1.2rem;
+    margin-bottom: 1rem;
+    color: var(--dark);
+}
+
+.cta {
+    display: inline-block;
+    background-color: var(--primary);
+    color: var(--dark);
+    padding: 0.75rem 1.5rem;
+    border-radius: 25px;
+    text-decoration: none;
+    font-weight: 600;
+    transition: background-color 0.3s;
+}
+
+.cta:hover {
+    background-color: var(--accent);
+}
+
+main {
+    padding: 2rem 1.5rem;
+}
+
+section {
+    margin-bottom: 4rem;
+}
+
+section h2 {
+    margin-top: 0;
+    font-size: 2rem;
+    text-align: center;
+    margin-bottom: 1.5rem;
+}
+
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+}
+
+.services-grid article {
+    background-color: var(--light);
+    border: 1px solid #eee;
+    padding: 1.5rem;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.services-grid h3 {
+    margin-top: 0;
+    color: var(--primary);
+}
+
+#forfait p {
+    text-align: center;
+    max-width: 700px;
+    margin: 0 auto 1rem;
+}
+
+#condition p {
+    max-width: 700px;
+    margin: 0 auto 1rem;
+    text-align: center;
+}
+
+.testimonials {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+}
+
+.testimonials blockquote {
+    background-color: var(--light);
+    border-left: 4px solid var(--primary);
+    padding: 1rem 1.5rem;
+    margin: 0;
+    border-radius: 4px;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+}
+
+.testimonials cite {
+    display: block;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+    color: var(--secondary);
+}
+
+#contact form {
+    max-width: 600px;
+    margin: 0 auto 1rem;
+    display: grid;
+    gap: 0.75rem;
+}
+
+#contact label {
+    font-weight: 600;
+}
+
+#contact input,
+#contact textarea {
+    padding: 0.5rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    font-size: 1rem;
+}
+
+#contact button {
+    width: fit-content;
+    padding: 0.75rem 1.5rem;
+    background-color: var(--secondary);
+    border: none;
+    border-radius: 25px;
+    color: var(--dark);
+    font-weight: 600;
+    cursor: pointer;
+}
+
+#contact button:hover {
+    background-color: var(--accent);
+}
+
+footer {
+    background-color: var(--primary);
+    color: var(--dark);
+    text-align: center;
+    padding: 1rem;
+}
+
+footer a {
+    color: var(--dark);
+    text-decoration: underline;
+}
