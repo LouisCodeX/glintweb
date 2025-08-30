@@ -1,110 +1,148 @@
-<!doctype html>
-<!-- update commit -->
-<html lang="fr">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>GlintWeb — Création de sites web à Béziers</title>
-<link rel="stylesheet" href="style.css">
-    <!-- Favicon using our minimalist logo encoded in base64. This improves brand recognition when the site is bookmarked. -->
-    <link rel="icon" type="image/png" href="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAIAAAD8GO2jAAAEEklEQVR4nK2W228bVRDGf3Muu+tLHCvN+05gEDMGJlBQKFIbEZb1oT5Oazo0efMuHOqxdpLSQKn1KFBFQW4TVLGNsUtUxF60oUKE9Dx9wKQlp4QSxBZ5nRieuzM8e9+b58j8Trne819fa/Vzw7q7SeH34qroIUfcYQJT6IBZJ6/6r1v43482sUU5lJYq/Bkhib4Fn3MP62CvZB5ZZaJjI8zebIDsUYelGBLubUItDTyqhMd7ZlL/0JglZdZAhrEcf/Tcm+e0IjRZVU18XkYoYj2F2HzwbUFcEUvQ3ji5Vs7HeJjK+LMIS9GCZAUDQhWJFRMWYyklH+ngHpCt6BXKSmHhgxT79d3u9f3stfZUWgqQP9V+DWN0mKkXgoFw8BDtvxv0vmG08hPVLjnbb5prfOo5EeJoOYrH5e/kqZp8IjGgx7hVvJmxGZCHBpAA0iav+bq7DDn/5RVIDzKwlpeN8dW0fggK1iP8mWjz10WIgZ+5P3s7nzkwwnHIHpgHBiw/4tBgiWqykK3zRqZtgf7SbjEyMXhLJMvPx3r7po4U3k7pXfFiKciAg0apu0bzta2PCPq/4x7lDyqXXFGoz40kUcxqU5OpaEub2ziUyGpkxCgjad5e3vHV/5EM+1QWL98tAQqRTGxBT4mtMOhcdDWCZBVLhkafF3/+h5L29tHO2wcX1rg6vFHFkEENIk6mLUnL5eSNZbyIkJFs1QxPxmmxmnoqD2gf5Y8JcCUNnl+SMT0w2NEqVhOZMeuP5mSNYbb2cwUkqFRnkrbxGG9KPi8Jg0nsEolpMlK0DsI2cb3EBowE6PvUdlCqaVg5eg2CtgOXZttcuThryvu8ZULIZusG6vf8CgnRAdh47lnuMVyew06Tmuig5YG3ct8kVPqhYfj11ZCGaSL4oMNNe7+wkRrg+uCSnlOHEuBjGE15Gr4+j7pVqRApbe4kYyZEeBIY2QfTVu6Qai5r2bv7lM5p5i2I4nzvq0fQeAGpZGbfF9jPt/q1ElyYoZJnMPHluxVHdPVr/7lnJk1L5vUk0DCIAe77b6Ksz3bbmsTv8kPgaY0/H5JRZc9x5eXk4kI2w5ZdpN/nxd+h5dTt/L2WKcDdOfFCTHwPft3hVb+1LpKn29gxo5HlsjGvu5/b1cQXXce77Tv3bHVs53DltuPQWdmeLe8Rt323O7bsJNs52mxzbysQ+Afc7PiBjk758QAAAABJRU5ErkJggg==">
-</head>
 <body>
-<header>
-<nav>
-        <!-- Replace the inline logo image with a text-based logo. This avoids embedding a large base64 string in the HTML. -->
-        <span class="logo-text">GlintWeb</span>
-<ul class="nav-links">
-<li><a href="#services">Services</a></li>
-<li><a href="#forfait">Forfait</a></li>
-<li><a href="#avis">Avis</a></li>
-<li><a href="#contact">Contact</a></li>
-</ul>
-</nav>
-<div class="hero">
-        <h1>Votre site vitrine professionnel en 1 semaine</h1>
-        <p>Maquette en 48 h et site complet en une semaine. Sans risque : vous ne payez que si vous êtes satisfait.</p>
-        <a href="#contact" class="cta">Demander un devis gratuit</a>
+  <!-- HEADER -->
+  <header class="site-header">
+    <div class="container header-inner">
+      <div class="brand">GlintWeb</div>
+      <nav class="main-nav">
+        <a href="#services">Services</a>
+        <a href="#forfait">Forfait</a>
+        <a href="#avis">Avis</a>
+        <a href="#contact" class="btn btn-sm">Contact</a>
+      </nav>
     </div>
-</header>
-<main>
-<section id="services">
-<h2>Nos services</h2>
-<div class="services-grid">
-<article>
-                <h3><img class="service-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAIAAAC1nk4lAAANT0lEQVR4nK1aaY8cx3l+3qrqnnN3ZrnkzJOTqEQJSKOkWKDVlYVo4MDB1bhrZxE0gj7jxPpjH8H8P4dEgf9p4Erff+MU3nOnPmdM8kfyeW+8X+rq+rbQJYE6AKyPI9rdt10sG0VYiUjJzpJk4pFmSNBSssMEzxGBauHUUhIZJOkV/r450WToq0hejn9fGHvmbaax6tyu0rZ2Yp8kfiAk+2CklGb7yvW6LFh3V2KVqvTm8w6v33uR4M4+iWObQmNGbEaakTc72gAi0g0btHV9SD9m53bCr+VAiOzVL3YlJloUqjR5yXC22PSTaot2Zh0N4f65SM0poP4h4Dsuk8+X5ML37GUEexniBwyE0ZO6DfxdjnWFwLlQtCsJS16fO9/dpbb2GPuP4gjxEaYVa4skJwrbECNsWiOJjX9F7vDwrbuPcdffZTxn69/CXMeTIpRe7cDLYqQRYbr/g1e2bUiV0nT2vYuUNOB1pa9NUymzsvG2sEmPXBrIKW4KvWSlUEONSLmEx89kvlpFYhzYMRvaAZAZQqx8Wa1I38cvh+Rl+EHAacQ43LkzXyvPdaZwsPpJqK4tVXqYo6su6o8AX4k/AYrUoh0TkxJEpVVg6aAOkyLrYfgnWL0CUAd4dOqZ2JngBE2bfHYc7XEhQPOhvcNSE4s6Qq1T5zXhPxaP5xq6VOiOJ5/ZL4lIoO4DpYex7x9evBcq4YP8t6DGZDKYMoCz+0//xktALYxQJAySUyLsaNvvaIznu8CnVq4Rkq1sQgqLKVkHHclWDkwyZOoJiQHBlg0vGV/ahE2GUao+aoVzyPJQKnlvLCgpctKbbO9m49ap/qzRpqkJvE9CcEAgOhEv20+YYklkIlhJwoyTiZ0z0SVn0mEozwmBcQaB2nfaLsNjLwKHJwSJK/gQ1gJZpG29ijJ4nsN0vy7k/Luga4hLKfCzZP0yTv5FpijIb31V3osn8OcP4kJ1HnRU18ldB0kKj8x3prHuDo37WpHod3x7hGtwUNnuteOMhGPDo6U5yYvL2WSn7Z64dVHmKdT+oXod7H4iPfgwKfZDWY/g/KMG9OeIqqcUy/7hV4EcZLxL6G1s2t4wzRSFM0M4MlWAgOkOvnp9ldKMmX7Xr2l+t3b3vuqLdLpD6aHQkwiEFJ17x0Q1r6hvwdcQx6tDQGPVoagx4tjUGPlm5I6P8Dxs1UnVeKthwAAAAASUVORK5CYII=" alt="Création"> Création de sites vitrines</h3>
-                <p>Site responsive, design unique, textes optimisés pour le référencement local. Adapté à votre activité.</p>
-            </article>
-            <article>
-                <h3><img class="service-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAIAAAC1nk4lAAAKo0lEQVR4nJ1a628dxRX/nXnsvbavHccOP4SShZQSLZtw1lpS9rVfj4KtPVteMsbBJ7FCSKkDZQgICEPPc3x871/3tnZVh5Wy5u2Hu7L3XnPOb9znR6t+vtpdko/kcZhSlYzPL3Vcm6bfDaVr0K25aTU+uFEHOugR5bKLXcMzMpZ2Qwa4VjEgr0SUgxs+mpHp5IakDfG+aB5JEQhrVBP5QxTqhujkRGmw6fMW/e1kTZddVu5qhIPQgGVEhZcGUXK7iQi57XI8hMZqlI6yXvlxcsFZ2K3mcoHU2G9Cc63Jl7q21epUJG5i4kLEB2QyYzmJUpglYOY16hvVV+PKrlruY8hsPb65Vj+o8Si/IKYgKOpRUdkpArj8mWVU6pZzL6vlZPCvZ7HMdcxKk6eaSDCpJPqbA+vm/JFMxU77yXX1K9X9DuF0rsZ6pvefOuyEpLXnuzQA0L5E8xUVxRrlZuquxbrvu+u+lVc/UqKMyG+cjgitCQ3gCwvYmsuXKSVp+KYyXbM0pHJyjndTiR4J0vZqgP2K4ULfiH/zBHoj7k/kTflxPS5fPt4nGV5f4LuPjT0Gco4NOyj0pKatEZA4xpFRVEw/JGrmMXm2ulJr/MLaJqptK+AjDk6Qcb6RZQpYkqyudilwZq6h0e3YY1nvXHbbWC5bbrNgbW47aIySTsxCdMejLA2Dbi6IXXFWBRY1Q5eTnE15c81k8IWkfWRmOVfmsiQGNp2FK96J9tsg3YloiJmKRcR+svkLkeY7TYmlkC+c7FhKUfTr/aiQfyoFIvMEshRyPpoFox1fI0kYZi1BfFf8T9pFjHk4UprXMKsn5dwacLF6/OiN46376PMv/fxTExJNEltUTSBmn9tsAJu45iPB72l5oaNpAqTtXzgweO5UTQEAP8HuevNbwp6SyIAAAAASUVORK5CYII=" alt="Refonte"> Refonte &amp; Relooking</h3>
-                <p>Modernisation de votre site existant pour refléter votre image et attirer de nouveaux clients.</p>
-            </article>
-            <article>
-                <h3><img class="service-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAIAAAC1nk4lAAAIZklEQVR4nO2Zf4xU1RXHz7n3vZk3P/b33u0mZefAFpX6Dk33B25nZ3rtpGZkz8h4skTYYLAlBJYoIBAghu8x4xz/j9vlu7MkxApI3nt2ozUs3Hnc2GdrHPv5+Q733znfX97+bwzJy24YTqq+DEKwhtAQ98NuZ+1vXWfDsqSMCEpRSvuvsor4yhze7gY6smGmLDAZo7gqDqVjBByiSeVqKGjdGdaXItT+yDvcYnF5PSJaSxAGJvkcGwpntW3hEv8TnGJXnfbmzWZ9QZEeR9j5HdPa1br2T8z0ctHXCiJAT2nzu9Tyt4MpLMNls83tePhcp9XUqJp81qom32uOhXR3NNzhg8FOg00jZ9ZTKWKitkWDF3MnfSgaq83HckVcPgqUuz7Lw5anYY7aeKWw5bODtqbLyE4x6zW8n1Zs4X3CqQZ8YbiqlSBw0NkcDEkQdJodCTCIQUnXvHRDWvqG/B1xDHq0NAZ9WhoMeLY1Bj5ZuSOj/A8bNVJ1XirYcAAAAAASUVORK5CYII=" alt="Accompagnement"> Accompagnement et conseils</h3>
-                <p>Configuration du nom de domaine, prise en main du site, et formation à l'outil de contenu.</p>
-            </article>
-            <article>
-                <h3><img class="service-icon" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAIAAAC1nk4lAAAIZklEQVR4nO2Zf4xU1RXHz7n3vZk3P/b33u0mZefAFpX6Dk33B25nZ3rtpGZkz8h4skTYYLAlBJYoIBAghu8x4xz/j9vlu7MkxApI3nt2ozUs3Hnc2GdrHPv5+Q733znfX97+bwzJy24YTqq+DEKwhtAQ98NuZ+1vXWfDsqSMCEpRSvuvsor4yhze7gY6smGmLDAZo7gqDqVjBByiSeVqKGjdGdaXItT+yDvcYnF5PSJaSxAGJvkcGwpntW3hEv8TnGJXnfbmzWZ9QZEeR9j5HdPa1br2T8z0ctHXCiJAT2nzu9Tyt4MpLMNls83tePhcp9XUqJp81qom32uOhXR3NNzhg8FOg00jZ9ZTKWKitkWDF3MnfSgaq83HckVcPgqUuz7Lw5anYY7aeKWw5bODtqbLyE4x6zW8n1Zs4X3CqQZ8YbiqlSBw0NkcDEkQdJodCTCIQUnXvHRDWvqG/B1xDHq0NAZ9WhoMeLY1Bj5ZuSOj/A8bNVJ1XirYcAAAAAASUVORK5CYII=" alt="Mises à jour"> Mises à jour simplifiées</h3>
-                <p>Intégration d’un mini-éditeur de contenu pour modifier textes et images en toute autonomie.</p>
-            </article>
-</div>
-</section>
-<section id="forfait">
-            <h2>Un seul forfait clair</h2>
-            <p><strong>590 € TTC</strong> – maquette sous 48 h et site en ligne en 1 semaine. Paiement uniquement à validation : pas de surprise.</p>
-            <p>Le forfait comprend : création du site, design sur‑mesure, mentions légales, optimisation mobile, intégration de vos contenus, achat du nom de domaine la première année et formation rapide à la mise à jour.</p>
-</section>
-<section id="condition">
-            <h2>Notre garantie “satisfait ou remboursé”</h2>
-            <p>Après un bref entretien pour cerner vos besoins, nous réalisons une maquette en 48 h. Si elle vous convient, nous finalisons et mettons en ligne votre site en une semaine. Sinon, vous ne payez rien !</p>
-</section>
-<section id="avis">
-            <h2>Ils nous font confiance</h2>
-            <div class="testimonials">
-                <div class="testimonial">
-                    <img class="avatar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAIAAAC1nk4lAAAUsUlEQVR4nIVaaYwcx3V+r6q6e86dPchdZ6qu66l6sxLk/NJsZziQ+2XMiRSbMXM7AEXkbxA7SESjZQUaDqd5EIykvFILkmlAJ6iSRJ9EkEpASdUkgAxJkSJMkb35rlu77vvu22X+bfM+zzmd73nnnvd31apf7ivTrkMhAOZDGUKGU/ylMwGvb9lj43SaeKliJCEQ6WWoyifVtZ5+NWlitjbwWNiyf2/IWn0hylEKZhfXSC6xa4tuNNp6A0USVFXsj8TBfLlJCUCFKCIhB6zIwbobOIeX3ms+uy4uQSrMV0GmBQNha7IQiZZclbvZhGKpYqaphTzTJUVXkCoQkCBlOlMzKf2Un22sRRdi0GzXsQ2LM7ZBXTWqohOlMHYLMbiSFqtrXQE0CEwnASxCS1WG4PxBHRmhCL6goPBTCFHh0e8tGmNpRVAZpNkAN7sWrmV5u1q432aJTJzTVb9jHPtuPMj70iBQIoEOWJFU4Zr9q1aWtS+q08LnKUfPqrVq9q39NZMnPgoiVGi8eQkqk5ZaMTQaJ6BHaHj7n7YN9a490TAVihyWrI2QKmYvW8jeiFS001lLlzAcU9mRmRKj88SbJyEqtZkUIyoI2uyv+ZxM4t9V1qdyL3aJl4jDqUoy41V8v0Ki0CmQJNsxlCzLSHLMhdkPIVps10qg28R5KZFSmmXl7StDbFMOD09CZQu6s7YlRayqCt5B4XDGaCn9cHkFNZziDy44xg10zSF58aqXIQSHS4kZNH71pZ0AiZA0w2zuJEdbmXk0CgakINcOsi/o5FCySo9c0lMZuY3G9e2ISmEVLTpQu9ToiRZpEhwzIC1dw9n5jh83r4BjKIb6FY/MkCFFTVaL6f55qCrIM6CQCIzFDUrHllbhS6cJYi/HyrI7n1IJcT3s0pwTZ4mtwZQEx6biJOnU1asfFvhyBrcdM9Y+yac+gkqYJBMI1Xg5w40Zx2UcKGjZXo7I8PoA88m8mrXvFnvY1b254TYf1jp8+8ANmrIkmOqAkbLl7pHdNt3tDWdJTG5c7jNkN5rZ/v8oXv6fQTk3m72Obvo05EGZJu9Wxd0OpkEJQvOZoUmUrbYJEsqgoozX2c/HP1jpydQAglSNk0TxJxwiUvq3dq7pI6Z0KKhgCs5S6GZjZCisSjqtZ4fCynH2MLCsnHPr8f/owGf/HWwuTKoNFqBA0jNKXfeOTGGAVo04G++ugkSJNwAQ3BNX6XqsS6iqonpglDENhJVAawbhgSZ7o/JM179XJn7vJjlrlB2APot4gdxoia8kihXmI+mFMQCak5UDYiwYrHC9tb+g8pJt4Q8bqJiNDqYlykjsLkF0hCs1hAjxT8+hscajPIsvzUyx2NXODacPYZGZxLMJ7C1j7biZ+dcxAeuf5rQBjF3GSt5OP9GhGWqzgnVeqQzxHOxnQCFRyItRpu52UJrCGiNDtzZFFIUMdFDYblKkZJNpIbzl333vZWd/QK5EnNKBMqkZrujG6t0JxgHZaqTGqkDCpW9pOzM6dHQb2T8YYnGl+hFzdNF3cUYw21uCt5zBcaJVboKdNFdJLpfg4PJdYiUtVhN35QK4Rai0jLVyywGZOwBVkuCQ3M4XpG6+cF2T5Pf0KlCqVJi9ap0/n/w8XdeJ2NWLo98x6wqVKpEpHpcF3XoJAg+f0AmHHT6hKHsCLdYTh8AOk7I5wweCkYkphyoZ6BIW1SNdaYwyS9ObpzZcRQuZJHF8yMNDAC0PJ7LB4KUnEAcEDQjENHEUtCOpNlBQ6ICDQMpANsJHbyILux5bI28q7e/Q2FPVojuemBvOljXQalL2wm9HfwB6Kw+QxW1xId43tK9yrwvnBUHEoD4YSEaIAPwNIQxlcq6OMe5K0qWAAYAClLq1MzQaXkTL9U2Z+HQjXqD0xJqnwkEgP8DYNdKKeBr41QAAAAASUVORK5CYII=" alt="Avatar 1">
-                    <div class="testimonial-text">
-                        <p>« J’avais un site vieillissant. En quelques jours, GlintWeb l’a transformé en une vitrine moderne et efficace. Mes clients adorent ! »</p>
-                        <cite>— Amandine, coiffeuse à Béziers</cite>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <img class="avatar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAAA8CAIAAAC1nk4lAAAUg0lEQVR4nH1aa7AcR3U+53TPzO7e3b331pmdRpArbnKHGxiJGjxIZJVQ0FNFCA7FxiCUnQKTq4v0aFs84FrJa0AHYhJMe54Ayz9s3zq716J/vbE7vONd3d97/5MnPrTnL3rfz0zr/eq3vwfJIUqW052kwY1F5qT0v0nXWtb2dpt5vaXWRFgh4kh0ECPr1Ytf3KjABYqt6K0RlgiqUxIpiQt2R/jn93QsEm8DJlxZyReic00rmHKi3ZhAYxoIg7CC2kJBhbG+KNep2hql6w0CvUpoRfJEVUuBk6nbOk3An2cFmoWo+UbKehJ0LSXzfjhmVIlNG4/9PgTfLbE6bHfbbECMNGRnBQxjlzuCLHQkCsLCFD0gKSC9GqPatnvs2Wp2RSpao7Nk9n8V7yiFeieZqEZgZuO1Fy4jBaLvNxwJTjr+anftyT0W/NY7SYLM8k1xZpHyWAJ7byD4aREllnldfuurM6tr95RbN6oQxaZDsTzHExw8wplVhZWj/o+f1tUJYQEBKcL12RvI4lMStd0HHXHrhSTkboK0zfxw2ho1nZxBzzOLSEhKk5z4UqrmK6CPYYrO79x2pgWt8a5pEoFHTMRRKYC1n/T3vqE/5kUnj8pLjvSL/Abl3ehVb0WL19mxLpdSGNwNRG/PXHCxLSs9JAGYvq0kYFCp0yrz8VuD0mCmljUtSg+Ua6PU5kZv05h8mT0aPwYxnsoZzMJGQwTpoRCmHOaY1mKicp4e/t9zh8v9E2yVu00zcz2sRpVD0GqaKFUAJDVERlJIqOf1hZrXtM0L99BrnBivdRjmWF7FLwawkgYg4Z8gXLNciFOWaZc5DaYpKLMyaDS0jUh54lYrlk3ZpIvK13iBA5ITmL2FlCwAwKMldJ7dHPrntC22Z5LNZBjD0xQwTEgC+m0RFkSaah1j7t2mtObxUt2KawqbTs1k8HMV+rCqxN0MY8D35Z6kzqV4O1maRKD4GU5RHbkJwMDV3aGFhcp1eD7tdTOUZdFV95y7yC5H+1a9vVKvBTfvjPZCm05HL0JcXVCTzcd3lsC2KGDZdvdrqxeFJy/lf9tTDrNWam3/RHmZcmQHu/2BMkpD4UcuBe9sJinpkj1vSSnSQai6B8L5dEc2v7u4iZTUewLc1IHzLAf/AEw76A4ar+xMZ3Pf7BQfYxPCSMieWv0/XqtTgCIB4IbXHegkQcdag/wPIXR5huu6YBwAAAABJRU5ErkJggg==" alt="Avatar 2">
-                    <div class="testimonial-text">
-                        <p>« Service rapide et sans mauvaise surprise. Je recommande vivement. »</p>
-                        <cite>— Malik, boulanger</cite>
-                    </div>
-                </div>
-                <div class="testimonial">
-                    <img class="avatar" src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADwAAABaCAIAAABrM6JiAAAaEUlEQVR4nM172a9kx3nf76uqs/Zy++5zVy6dnTlI1CQqhKwYOiIztgNTQi2koIGIgDbACqAcbY6QYHsGvbwoVBBVFAkiA0gA7INJ+xgKCFA1UEhCUEdRFmCXCdmLG44Tlcbu/9X9/zfHpPJyxImNjAXZ56r/r7nPefu974vfU6ed8HtZ6d5ugYcE8mNULJy+pxvW+eqxi9Z1DJJS1VXiD2uOe1zNmdZWrDJgJpiBRQpShWCC4yp8jdRroBJpznMTQQB1vA8dzOnzB/1f/3+xfu0rCRDwwBCpuqkK9sKOojhFU+JzoMmnse52/N2r7r7qYVgvXBpsvNtMQknILqBx8JclooodrqczvjgQ1wTBAKHGo6YaKQVH3161I/njM16/uqL1GVY63NTnIeUAAuFJBxDt6pY0JUsqPveUH3ntEjWdZ9/KmvqNo6ahUZLcks9BvWAg9k0gdaJmFkCZk2i8TWb6bpFZPlUj5d2Jxn3iVtMncZIQRy/qX5IgYdpym7ZbH7z2WvNKEi7iohHLequypQGjfPjPStC6FdpDhtlcgLA9XyD4ulUUnpPTA1TKM64Qg3pHGhhc4MlayAZS7pJS79/PPd1tNW6g4k0pSjMaHMFnCFowQoZpzcn9h2XU9w041e7pk+oEf09Uo/rGnCTicm/LE9dwjtIBz5i0h0oXDLhgNTTPctO5omV/nOjktY22F5LPPy6UTMt1ZYoJj+Np0yktONaiv5S5L2ZB44SbCEwOYPshq2/j+jeyIWrwN8VFfm8aeosjlj1vsPeytZPrmG6cyJs2k6JMv0iP2oQCGXvm4CyJyVo3cZ4DSmTu8UV9wsYy2moXLnTuJkGbPilUEcr4RGrBkKCjaSl2UgE3amhbtUzpK5njPdyTSkjZVIbaxmJf5XnGmBnfp/UOF4qZmSQioYKkrWi+Mz2aT5idJgGxoWC7twyDN6IlJ7HwBFuNS0wPRa5uSz/pk5x1dgtvULN0f2ZzMyrsg9dokB0cLQICZHR8aRR6DdSF7MN9QcG+2EabuTklO3XK0R4hVIVLM7VIElZbkYUMHjNw+bYI5MynXKdnp+5ZiXUsWBmMqLymP00p5sVTY43tPuihDsdBjXmzdh8kroYEbu45N2oXq39GQ4EkkFCFQf6WWPQMrEhLMtsvJIpcSklLK7gR3wdMBLDCz5j5JNdyIZqldn2tEQfHCWJ3bxbeWBdPihdXd0k7g8vOpDKXUDPPDuukBtIj7eYHdcnpF7acmq83em0bJ6TrXEv2MlKpsMpmJEceha5HLWmD3C6hBg6/67Z6hu22Yr0vN21Gswt4ujXKTMHNKbydA1MZDJcrsfjMbMbVT4pL9Y4EXgeKeurhSmvVJ0a/dAKkuirK5J5mYgr09dKwFrP70bLOQ2uBKSb6Nvy6rVCIMn7kkqHTpqKaiaMd7TmT6j6/nP5jF1wcX0rtTJyrd5hFbXJz1rZ8c+EerzxMvQxU016lkNhXc0EpHmRm5XOvfrIS7n7hEoJBQeJ1CrdacD4ICyhv5zsLrroOmZ6w6nrpXj6mHgnWctnuo0wz5UnyA/CjGtMM75slCETtaKhYYblNrUy8CUVpaTaidiu1YkpoPZWf1v9IcAarIxTLOfkWUO0w3yex8daAGPqCReGv0pRhDtkRQyKuoYPVl/utGf3HIdAeZJLfXSkLAIi6R/zd/8jXAE38/aTNhBWr/4urVyGjN+l/r95kEVpfxz69QAAAABJRU5ErkJggg==" alt="Avatar 3">
-                    <div class="testimonial-text">
-                        <p>« J’ai enfin un site qui donne envie de venir en boutique. Merci ! »</p>
-                        <cite>— Claire, esthéticienne</cite>
-                    </div>
-                </div>
-            </div>
-</section>
-<section id="contact">
-<h2>Contactez-nous</h2>
-            <p>Vous souhaitez en savoir plus ? Remplissez le formulaire ci‑dessous ou appelez‑nous directement.</p>
-            <div class="contact-card">
-                <form action="mailto:louis.benassy@gmail.com" method="post" enctype="text/plain">
-                    <label for="name">Nom :</label>
-                    <input type="text" id="name" name="Nom" required>
-                    <label for="email">E‑mail :</label>
-                    <input type="email" id="email" name="Email" required>
-                    <label for="message">Votre message :</label>
-                    <textarea id="message" name="Message" rows="5" required></textarea>
-                    <button type="submit">Envoyer</button>
-                </form>
-                <p>Par téléphone : <a href="tel:+33695951631">06 95 95 16 31</a></p>
-                <p>Par e‑mail : <a href="mailto:louis.benassy@gmail.com">louis.benassy@gmail.com</a></p>
-            </div>
-</section>
-</main>
-<footer>
-<p>&copy; 2025 GlintWeb – Tous droits réservés.</p>
-<p><a href="mentions-legales.html">Mentions légales</a></p>
-</footer>
+  </header>
+
+  <!-- HERO avec illustration + overlay -->
+  <section class="hero">
+    <div class="container hero-inner">
+      <div class="hero-copy">
+        <h1>Votre site vitrine professionnel en 1&nbsp;semaine</h1>
+        <p>Maquette en 48&nbsp;h. Mise en ligne en une semaine. Sans risque&nbsp;: vous ne payez que si vous validez.</p>
+        <a class="btn btn-lg" href="#contact">Demander un devis gratuit</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SERVICES avec icônes -->
+  <section id="services" class="section">
+    <div class="container">
+      <h2>Nos services</h2>
+      <div class="cards">
+        <article class="card">
+          <div class="service-icon">
+            <!-- laptop -->
+            <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 5h16a1 1 0 0 1 1 1v9H3V6a1 1 0 0 1 1-1zm-2 12h20v1a2 2 0 0 1-2 2H4a2 2 0 0 1-2-2v-1z" /></svg>
+          </div>
+          <h3>Création de sites vitrines</h3>
+          <p>Design sur-mesure, responsive et optimisé pour le référencement local.</p>
+        </article>
+
+        <article class="card">
+          <div class="service-icon">
+            <!-- refresh -->
+            <svg viewBox="0 0 24 24"><path d="M17.65 6.35A8 8 0 1 0 20 12h-2a6 6 0 1 1-1.76-4.24L14 10h6V4l-2.35 2.35z"/></svg>
+          </div>
+          <h3>Refonte &amp; relooking</h3>
+          <p>Modernisation graphique et ergonomique pour convertir davantage.</p>
+        </article>
+
+        <article class="card">
+          <div class="service-icon">
+            <!-- settings -->
+            <svg viewBox="0 0 24 24"><path d="M12 8a4 4 0 1 1 0 8 4 4 0 0 1 0-8zm8.94 4a7 7 0 0 0-.14-1.5l2.06-1.6-2-3.46-2.43 1a7 7 0 0 0-2.6-1.5l-.4-2.6H10.6l-.4 2.6a7 7 0 0 0-2.6 1.5l-2.43-1-2 3.46 2.06 1.6A7 7 0 0 0 4 12c0 .5.05 1 .14 1.5l-2.06 1.6 2 3.46 2.43-1a7 7 0 0 0 2.6 1.5l.4 2.6h4.8l.4-2.6a7 7 0 0 0 2.6-1.5l2.43 1 2-3.46-2.06-1.6c.09-.5.14-1 .14-1.5z"/></svg>
+          </div>
+          <h3>Accompagnement</h3>
+          <p>Domaine, hébergement, e-mail pro, analytics : on s’occupe de tout.</p>
+        </article>
+
+        <article class="card">
+          <div class="service-icon">
+            <!-- pencil -->
+            <svg viewBox="0 0 24 24"><path d="M3 17.25V21h3.75L17.81 9.94l-3.75-3.75L3 17.25zM20.71 7.04a1 1 0 0 0 0-1.41l-2.34-2.34a1 1 0 0 0-1.41 0l-1.83 1.83 3.75 3.75 1.83-1.83z"/></svg>
+          </div>
+          <h3>Mises à jour simplifiées</h3>
+          <p>Mini-éditeur de contenu pour modifier textes et images en autonomie.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRIX + GARANTIE -->
+  <section id="forfait" class="section">
+    <div class="container">
+      <div class="price-card">
+        <div class="badge">Satisfait ou remboursé</div>
+        <div>
+          <h3>Un seul forfait clair</h3>
+          <p class="price"><strong>590&nbsp;€ TTC</strong></p>
+          <p>Maquette sous 48&nbsp;h et site en ligne en 1&nbsp;semaine. Paiement uniquement à validation.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- AVIS -->
+  <section id="avis" class="section">
+    <div class="container">
+      <h2>Ils nous font confiance</h2>
+      <div class="testimonials">
+        <article class="testimonial-card">
+          <div class="avatar">A</div>
+          <p>« J’avais un site vieillissant. En quelques jours, GlintWeb l’a transformé en une vitrine moderne et efficace. »</p>
+          <span class="meta">Amandine – Coiffeuse</span>
+        </article>
+        <article class="testimonial-card">
+          <div class="avatar">M</div>
+          <p>« Service rapide et sans mauvaise surprise. Je recommande vivement. »</p>
+          <span class="meta">Malik – Boulanger</span>
+        </article>
+        <article class="testimonial-card">
+          <div class="avatar">C</div>
+          <p>« Un site qui donne envie de venir en boutique. Merci ! »</p>
+          <span class="meta">Claire – Esthéticienne</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="container">
+      <div class="contact-card">
+        <h2>Contactez-nous</h2>
+        <form action="mailto:louis.benassy@gmail.com" method="post" enctype="text/plain">
+          <div class="field">
+            <span class="icon">@</span>
+            <input type="text" placeholder="Nom" required>
+          </div>
+          <div class="field">
+            <span class="icon">✉</span>
+            <input type="email" placeholder="E-mail" required>
+          </div>
+          <div class="field">
+            <span class="icon">✎</span>
+            <textarea placeholder="Votre message" rows="4" required></textarea>
+          </div>
+          <button class="btn btn-lg" type="submit">Envoyer</button>
+        </form>
+        <div class="alt-contacts">
+          <a href="tel:+33695951631">📞 06 95 95 16 31</a>
+          <a href="mailto:louis.benassy@gmail.com">✉ louis.benassy@gmail.com</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer">
+    <div class="container footer-inner">
+      <span>© 2025 GlintWeb</span>
+      <nav class="footer-nav">
+        <a href="#services">Services</a>
+        <a href="#forfait">Forfait</a>
+        <a href="#avis">Avis</a>
+        <a href="mentions-legales.html">Mentions légales</a>
+      </nav>
+    </div>
+  </footer>
 </body>
-</html>
