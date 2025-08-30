@@ -1,255 +1,181 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap');
+/* ===========================
+   GlintWeb – style.css (full)
+   =========================== */
 
-:root {
-    --primary: #FDC58B;
-    --secondary: #A7E8E5;
-    --accent: #F7B0D1;
-    --dark: #333;
-    --light: #fdfdfd;
+:root{
+  --primary:#FDC58B;      /* pêche */
+  --accent:#F7B0D1;       /* rose */
+  --teal:#A7E8E5;         /* vert d'eau */
+  --ink:#2B2B2B;          /* texte principal */
+  --muted:#f6f7fb;        /* bg clair sections alternées */
+  --bg:#ffffff;           /* fond cartes */
+  --shadow:0 8px 30px rgba(0,0,0,.08);
 }
 
-body {
-    margin: 0;
-    font-family: 'Poppins', sans-serif;
-    color: var(--dark);
-    line-height: 1.6;
-    background-color: var(--light);
+*{box-sizing:border-box}
+html,body{margin:0;padding:0}
+body{
+  color:var(--ink);
+  font:16px/1.55 system-ui,-apple-system,Segoe UI,Roboto,Inter,Arial,sans-serif;
+  background:#fff;
+}
+img,svg{display:block;max-width:100%;height:auto}
+h1,h2,h3{margin:.2em 0 .5em}
+p{margin:.4em 0 1em}
+.container{max-width:1080px;margin:0 auto;padding:0 20px}
+
+/* ---------------------------
+   HEADER
+--------------------------- */
+.site-header{
+  position:sticky;top:0;z-index:40;background:#fff;
+  border-bottom:1px solid #eee;
+  backdrop-filter:saturate(120%) blur(6px);
+}
+.header-inner{
+  display:flex;align-items:center;justify-content:space-between;
+  padding:14px 0;
+}
+.brand{font-weight:800;letter-spacing:.2px}
+.main-nav a{
+  color:var(--ink);text-decoration:none;margin-left:18px;opacity:.9
+}
+.main-nav a:hover{opacity:1}
+.main-nav .btn{margin-left:26px}
+
+/* ---------------------------
+   BOUTONS
+--------------------------- */
+.btn{
+  display:inline-block;padding:.6rem 1rem;border-radius:10px;
+  border:1px solid transparent;text-decoration:none;font-weight:600;
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+  color:#2b1b1b;box-shadow:var(--shadow);transition:.2s transform ease
+}
+.btn:hover{transform:translateY(-1px);filter:saturate(1.05)}
+.btn-sm{padding:.4rem .8rem}
+.btn-lg{padding:.9rem 1.2rem}
+
+/* ---------------------------
+   HERO
+--------------------------- */
+.hero{
+  position:relative;min-height:68vh;display:flex;align-items:center;
+  background:url('images/hero_small.jpg') right/cover no-repeat;
+}
+.hero::before{
+  content:"";position:absolute;inset:0;
+  /* overlay dégradé pour lisibilité du texte */
+  background:linear-gradient(110deg,
+             rgba(255,255,255,.95) 0 55%,
+             rgba(255,255,255,.45) 70%,
+             rgba(255,255,255,0) 100%);
+}
+.hero-inner{position:relative}
+.hero-copy{max-width:560px;padding:60px 0}
+.hero h1{font-size:clamp(28px,5vw,44px);line-height:1.15;margin-bottom:.4rem}
+.hero p{font-size:clamp(16px,2.5vw,18px);margin-bottom:1.1rem}
+
+/* ---------------------------
+   SECTIONS GÉNÉRALES
+--------------------------- */
+.section{padding:64px 0;background:#fff}
+.section:nth-of-type(odd){background:var(--muted)}
+.section h2{text-align:center;margin-bottom:24px;font-size:clamp(22px,3vw,28px)}
+
+/* ---------------------------
+   CARTES / SERVICES
+--------------------------- */
+.cards{
+  display:grid;gap:18px;
+  grid-template-columns:repeat(auto-fit,minmax(230px,1fr));
+}
+.card{
+  background:var(--bg);border:1px solid #eee;border-radius:14px;
+  padding:18px;box-shadow:var(--shadow);transition:.2s transform ease
+}
+.card:hover{transform:translateY(-2px)}
+.service-icon{
+  width:40px;height:40px;border-radius:10px;margin-bottom:8px;
+  display:grid;place-items:center;
+  background:linear-gradient(135deg,var(--primary),var(--accent));
+}
+.service-icon svg{width:22px;height:22px;fill:#3c2a2a}
+
+/* ---------------------------
+   PRIX + GARANTIE
+--------------------------- */
+.price-card{
+  position:relative;display:flex;gap:22px;align-items:center;
+  background:#fff;border:1px solid #eee;border-radius:16px;
+  padding:22px;box-shadow:var(--shadow)
+}
+.price-card .price{font-size:28px;margin:.2rem 0}
+.badge{
+  position:absolute;top:-12px;right:-12px;
+  background:var(--teal);color:#05383a;font-weight:700;font-size:12px;
+  padding:6px 10px;border-radius:10px;box-shadow:var(--shadow)
 }
 
-header {
-    /* Replace external hero image with a soft gradient to avoid storing binary assets.
-       The gradient transitions between the primary and accent colours defined in the root.
-       This keeps the design lightweight and ensures the page loads quickly without downloading an external image. */
-    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
-    color: var(--light);
-    position: relative;
-    min-height: 60vh;
+/* ---------------------------
+   TÉMOIGNAGES
+--------------------------- */
+.testimonials{
+  display:grid;gap:18px;margin-top:10px;
+  grid-template-columns:repeat(auto-fit,minmax(260px,1fr));
+}
+.testimonial-card{
+  background:#fff;border:1px solid #eee;border-radius:14px;
+  padding:18px;box-shadow:var(--shadow)
+}
+.avatar{
+  width:40px;height:40px;border-radius:50%;margin-bottom:8px;
+  display:grid;place-items:center;font-weight:800;color:#2b1b1b;
+  background:linear-gradient(135deg,var(--primary),var(--accent))
+}
+.meta{font-size:12px;color:#666}
+
+/* ---------------------------
+   CONTACT
+--------------------------- */
+.contact-card{
+  background:#fff;border:1px solid #eee;border-radius:16px;
+  box-shadow:var(--shadow);padding:22px
+}
+.field{position:relative;margin:10px 0}
+.field .icon{position:absolute;left:12px;top:50%;transform:translateY(-50%);opacity:.65}
+.field input,.field textarea{
+  width:100%;padding:12px 12px 12px 34px;border:1px solid #ddd;border-radius:10px;font:inherit
+}
+.field input:focus,.field textarea:focus{
+  outline:none;border-color:#b9b9ff;box-shadow:0 0 0 3px rgba(120,120,255,.15)
 }
 
-nav {
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 1rem 2rem;
-}
+/* ---------------------------
+   FOOTER
+--------------------------- */
+.site-footer{background:#12212e;color:#cfd6dd;margin-top:30px}
+.footer-inner{display:flex;align-items:center;justify-content:space-between;padding:18px 0}
+.footer-nav a{color:#cfd6dd;text-decoration:none;margin-left:16px}
+.footer-nav a:hover{text-decoration:underline}
 
-/* Stylise the textual logo. It uses a larger font and white colour to contrast the gradient header. */
-.logo-text {
-    font-size: 1.8rem;
-    font-weight: 700;
-    color: var(--light);
-    letter-spacing: -0.5px;
-}
+/* ---------------------------
+   ACCESSIBILITÉ / HOVER
+--------------------------- */
+a{color:inherit}
+a:focus-visible,button:focus-visible{outline:3px solid #b9b9ff;outline-offset:2px}
+::selection{background:rgba(253,197,139,.6)}
 
-nav .logo {
-    /* Remove default image sizing for logos. Logo is now represented as text via the .logo-text class. */
-    width: auto;
-    height: auto;
+/* ---------------------------
+   RESPONSIVE
+--------------------------- */
+@media (max-width:900px){
+  .hero{min-height:62vh;background-position:70% 50%}
 }
-
-nav .nav-links {
-    list-style: none;
-    display: flex;
-    gap: 1.5rem;
-    margin: 0;
-}
-
-nav .nav-links li {
-    margin: 0;
-}
-
-nav .nav-links a {
-    color: var(--light);
-    text-decoration: none;
-    font-weight: 600;
-}
-
-.hero {
-    text-align: center;
-    margin-top: 12vh;
-    padding: 2rem;
-    background: rgba(255, 255, 255, 0.7);
-    display: inline-block;
-    border-radius: 8px;
-}
-
-.hero h1 {
-    font-size: 2.5rem;
-    margin-bottom: 0.5rem;
-    color: var(--dark);
-}
-
-.hero p {
-    font-size: 1.2rem;
-    margin-bottom: 1rem;
-    color: var(--dark);
-}
-
-.cta {
-    display: inline-block;
-    background-color: var(--primary);
-    color: var(--dark);
-    padding: 0.75rem 1.5rem;
-    border-radius: 25px;
-    text-decoration: none;
-    font-weight: 600;
-    transition: background-color 0.3s;
-}
-
-.cta:hover {
-    background-color: var(--accent);
-}
-
-main {
-    padding: 2rem 1.5rem;
-}
-
-section {
-    margin-bottom: 4rem;
-}
-
-section h2 {
-    margin-top: 0;
-    font-size: 2rem;
-    text-align: center;
-    margin-bottom: 1.5rem;
-}
-
-.services-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1.5rem;
-}
-
-.services-grid article {
-    background-color: var(--light);
-    border: 1px solid #eee;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-}
-
-/* Align the service heading and icon on a single row. The h3 becomes a flex container. */
-.services-grid h3 {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    margin-top: 0;
-    color: var(--primary);
-}
-
-/* Service icons appear before headings. Use consistent sizing and prevent shrinking. */
-.service-icon {
-    width: 40px;
-    height: 40px;
-    flex-shrink: 0;
-}
-
-.services-grid h3 {
-    margin-top: 0;
-    color: var(--primary);
-}
-
-#forfait p {
-    text-align: center;
-    max-width: 700px;
-    margin: 0 auto 1rem;
-}
-
-#condition p {
-    max-width: 700px;
-    margin: 0 auto 1rem;
-    text-align: center;
-}
-
-.testimonials {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 2rem;
-}
-
-/* New testimonial layout: each testimonial is a card with an avatar and text */
-.testimonial {
-    display: flex;
-    align-items: flex-start;
-    gap: 1rem;
-    background-color: var(--light);
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
-}
-
-.testimonial .avatar {
-    width: 60px;
-    height: 60px;
-    border-radius: 50%;
-    flex-shrink: 0;
-}
-
-.testimonial-text p {
-    margin: 0 0 0.5rem 0;
-    font-style: italic;
-}
-
-.testimonial-text cite {
-    display: block;
-    font-size: 0.9rem;
-    color: var(--secondary);
-}
-
-#contact form {
-    max-width: 600px;
-    margin: 0 auto 1rem;
-    display: grid;
-    gap: 0.75rem;
-}
-
-/* Style the new contact card wrapper to make the form stand out */
-.contact-card {
-    background-color: var(--light);
-    border: 1px solid #eee;
-    padding: 1.5rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    max-width: 700px;
-    margin: 0 auto 2rem;
-}
-
-#contact label {
-    font-weight: 600;
-}
-
-#contact input,
-#contact textarea {
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
-    font-size: 1rem;
-}
-
-#contact button {
-    width: fit-content;
-    padding: 0.75rem 1.5rem;
-    background-color: var(--secondary);
-    border: none;
-    border-radius: 25px;
-    color: var(--dark);
-    font-weight: 600;
-    cursor: pointer;
-}
-
-#contact button:hover {
-    background-color: var(--accent);
-}
-
-footer {
-    background-color: var(--primary);
-    color: var(--dark);
-    text-align: center;
-    padding: 1rem;
-}
-
-footer a {
-    color: var(--dark);
-    text-decoration: underline;
+@media (max-width:640px){
+  .header-inner{flex-direction:column;gap:10px}
+  .main-nav a{margin:0 10px}
+  .btn-lg{padding:.8rem 1rem}
+  .hero{min-height:58vh;background-position:60% 50%}
+  .hero-copy{padding:40px 0}
 }
