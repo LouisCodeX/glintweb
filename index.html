@@ -1,0 +1,159 @@
+<!doctype html>
+<html lang="fr">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>GlintWeb — Création de sites web à Béziers</title>
+    <!-- Favicon pour l'onglet et les favoris -->
+    <link rel="icon" type="image/png" href="images/logo.png">
+    <!-- Feuille de style principale -->
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <!-- En‑tête avec navigation -->
+    <header class="site-header">
+      <div class="container nav-container">
+        <div class="brand">
+          <img src="images/logo.png" alt="Logo GlintWeb" class="brand-icon">
+          <span class="brand-name">GlintWeb</span>
+        </div>
+        <nav class="main-nav">
+          <a href="#services">Services</a>
+          <a href="#forfait">Forfait</a>
+          <a href="#avis">Avis</a>
+          <a href="#contact" class="btn btn-small">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Section Héro, avec slogan et illustration -->
+    <section class="hero">
+      <div class="container hero-content">
+        <div class="hero-text">
+          <h1>Votre site vitrine professionnel en&nbsp;1&nbsp;semaine</h1>
+          <p>Maquette en 48 h. Mise en ligne en une semaine. Sans risque : vous ne payez que si vous validez.</p>
+          <a href="#contact" class="btn btn-large">Demander un devis gratuit</a>
+        </div>
+        <div class="hero-image">
+          <img src="images/hero.png" alt="Illustration de création de site web" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Services -->
+    <section id="services" class="section services">
+      <div class="container">
+        <h2>Nos services</h2>
+        <div class="cards">
+          <article class="card">
+            <img src="images/icon_create.png" alt="Création de site" class="card-icon">
+            <h3>Création de sites vitrines</h3>
+            <p>Conception sur‑mesure, responsive et optimisée pour le référencement local. Un design unique adapté à votre activité.</p>
+          </article>
+          <article class="card">
+            <img src="images/icon_redesign.png" alt="Refonte de site" class="card-icon">
+            <h3>Refonte&nbsp;&amp;&nbsp;relooking</h3>
+            <p>Modernisation de votre site existant afin de refléter votre image et de convaincre de nouveaux clients.</p>
+          </article>
+          <article class="card">
+            <img src="images/icon_support.png" alt="Accompagnement" class="card-icon">
+            <h3>Accompagnement complet</h3>
+            <p>Achat et configuration du nom de domaine, hébergement, e‑mail professionnel, analytics : nous nous chargeons de tout.</p>
+          </article>
+          <article class="card">
+            <img src="images/icon_update.png" alt="Mises à jour" class="card-icon">
+            <h3>Mises à jour simplifiées</h3>
+            <p>Intégration d’un mini‑éditeur de contenu pour modifier textes et images en toute autonomie.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Forfait/Prix -->
+    <section id="forfait" class="section forfait">
+      <div class="container">
+        <div class="price-card">
+          <span class="badge">Satisfait ou remboursé</span>
+          <div class="price-content">
+            <h2>Un seul forfait clair</h2>
+            <p class="price">590 € TTC</p>
+            <p>Maquette sous 48 h et site en ligne en une semaine. Paiement uniquement à validation : pas de surprise.</p>
+            <ul class="price-list">
+              <li>Design sur‑mesure et responsive</li>
+              <li>Optimisation mobile et SEO local</li>
+              <li>Mentions légales et bandeau cookies</li>
+              <li>Achat du nom de domaine la première année</li>
+              <li>Formation rapide à l’outil de mise à jour</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Témoignages -->
+    <section id="avis" class="section avis">
+      <div class="container">
+        <h2>Ils nous font confiance</h2>
+        <div class="testimonials">
+          <article class="testimonial-card">
+            <img src="images/avatar_amandine.png" alt="Portrait d’Amandine" class="avatar">
+            <p>« J’avais un site vieillissant. En quelques jours, GlintWeb l’a transformé en une vitrine moderne et efficace. Mes clientes adorent ! »</p>
+            <span class="meta">Amandine — coiffeuse</span>
+          </article>
+          <article class="testimonial-card">
+            <img src="images/avatar_malik.png" alt="Portrait de Malik" class="avatar">
+            <p>« Service rapide et sans mauvaise surprise. Je recommande vivement cette offre sans engagement. »</p>
+            <span class="meta">Malik — boulanger</span>
+          </article>
+          <article class="testimonial-card">
+            <img src="images/avatar_claire.png" alt="Portrait de Claire" class="avatar">
+            <p>« J’ai enfin un site qui donne envie de venir au salon. Merci GlintWeb ! »</p>
+            <span class="meta">Claire — esthéticienne</span>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <!-- Section Contact -->
+    <section id="contact" class="section contact">
+      <div class="container">
+        <div class="contact-card">
+          <h2>Contactez‑nous</h2>
+          <p>Vous souhaitez en savoir plus ? Remplissez le formulaire ci‑dessous ou contactez‑nous directement.</p>
+          <form action="mailto:louis.benassy@gmail.com" method="post" enctype="text/plain">
+            <div class="field">
+              <label for="name">Nom :</label>
+              <input type="text" id="name" name="Nom" required placeholder="Votre nom">
+            </div>
+            <div class="field">
+              <label for="email">E‑mail :</label>
+              <input type="email" id="email" name="Email" required placeholder="Votre e‑mail">
+            </div>
+            <div class="field">
+              <label for="message">Votre message :</label>
+              <textarea id="message" name="Message" rows="5" required placeholder="Expliquez votre projet"></textarea>
+            </div>
+            <button type="submit" class="btn btn-large">Envoyer</button>
+          </form>
+          <div class="alt-contacts">
+            <p><strong>Par téléphone :</strong> <a href="tel:+33695951631">06 95 95 16 31</a></p>
+            <p><strong>Par e‑mail :</strong> <a href="mailto:louis.benassy@gmail.com">louis.benassy@gmail.com</a></p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Pied de page -->
+    <footer class="site-footer">
+      <div class="container footer-content">
+        <span>© 2025 GlintWeb – Tous droits réservés.</span>
+        <nav class="footer-nav">
+          <a href="#services">Services</a>
+          <a href="#forfait">Forfait</a>
+          <a href="#avis">Avis</a>
+          <a href="mentions-legales.html">Mentions légales</a>
+        </nav>
+      </div>
+    </footer>
+  </body>
+</html>

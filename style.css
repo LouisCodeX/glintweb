@@ -1,0 +1,384 @@
+/*
+ * GlintWeb – Feuille de style principale
+ *
+ * Ce fichier définit les variables de couleur, les styles typographiques
+ * et la mise en page pour le site vitrine. L'objectif est de produire
+ * un design pastel moderne, élégant et facile à lire, en reprenant
+ * l'identité visuelle de l'icône étoilée fournie par l'utilisateur.
+ */
+
+/* Variables globales de couleur */
+:root {
+  --color-primary: #FDC58B;   /* pêche/orange clair */
+  --color-secondary: #F7B0D1; /* rose doux */
+  --color-accent: #A7E8E5;    /* vert d'eau */
+  --color-dark: #2B2B2B;      /* couleur de texte principale */
+  --color-muted: #faf6f4;     /* arrière‑plan alterné très clair */
+  --color-card: #ffffff;      /* fond des cartes */
+  --color-border: #f1e9e5;    /* bordure légère */
+  --color-gray: #747474;      /* gris pour le texte secondaire */
+  --color-footer-bg: #12212e; /* arrière‑plan du pied de page */
+  --color-footer-text: #cfd6dd; /* texte du pied de page */
+  --shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+}
+
+/* Réinitialisation de base */
+* {
+  box-sizing: border-box;
+}
+html, body {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+  color: var(--color-dark);
+  background-color: var(--color-card);
+  line-height: 1.6;
+}
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+h1, h2, h3 {
+  line-height: 1.3;
+  margin: 0 0 .5em;
+}
+p {
+  margin: 0 0 1em;
+}
+ul {
+  margin: .5em 0;
+  padding-left: 1.2em;
+}
+li {
+  margin-bottom: .4em;
+}
+
+/* Conteneur et sections */
+.container {
+  max-width: 1120px;
+  margin: 0 auto;
+  padding: 0 1.2rem;
+}
+.section {
+  padding: 4rem 0;
+}
+.section:nth-of-type(even) {
+  background-color: var(--color-muted);
+}
+.section h2 {
+  text-align: center;
+  font-size: 2rem;
+  margin-bottom: 2rem;
+  color: var(--color-dark);
+}
+
+/* Boutons */
+.btn {
+  display: inline-block;
+  padding: .75rem 1.4rem;
+  border-radius: .5rem;
+  font-weight: 600;
+  text-decoration: none;
+  border: none;
+  background-image: linear-gradient(135deg, var(--color-primary), var(--color-secondary));
+  color: var(--color-dark);
+  cursor: pointer;
+  transition: transform .15s ease, filter .2s ease;
+}
+.btn:hover,
+.btn:focus {
+  transform: translateY(-2px);
+  filter: brightness(1.05);
+}
+.btn-small {
+  padding: .5rem 1rem;
+  font-size: .9rem;
+}
+.btn-large {
+  padding: 1rem 1.8rem;
+  font-size: 1rem;
+}
+
+/* En‑tête */
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 999;
+  background-color: var(--color-card);
+  border-bottom: 1px solid var(--color-border);
+  box-shadow: var(--shadow);
+}
+.nav-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 1rem 0;
+}
+.brand {
+  display: flex;
+  align-items: center;
+  gap: .6rem;
+  font-weight: 700;
+  font-size: 1.2rem;
+  letter-spacing: .5px;
+  color: var(--color-dark);
+}
+.brand-icon {
+  width: 32px;
+  height: 32px;
+}
+.main-nav a {
+  margin-left: 1.6rem;
+  color: var(--color-dark);
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  transition: color .2s;
+}
+.main-nav a:hover {
+  color: var(--color-secondary);
+}
+
+/* Hero section */
+.hero {
+  overflow: hidden;
+  background: linear-gradient(120deg, var(--color-primary) 0%, var(--color-secondary) 100%);
+  padding: 3rem 0;
+}
+.hero-content {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.hero-text {
+  flex: 1 1 380px;
+  max-width: 560px;
+}
+.hero-text h1 {
+  font-size: clamp(1.8rem, 4vw + 1rem, 2.8rem);
+  margin-bottom: .6rem;
+}
+.hero-text p {
+  font-size: 1rem;
+  margin-bottom: 1.4rem;
+}
+.hero-image {
+  flex: 1 1 380px;
+  display: flex;
+  justify-content: center;
+}
+.hero-image img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 1rem;
+  box-shadow: var(--shadow);
+}
+
+/* Cartes de services */
+.cards {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+.card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  padding: 1.6rem;
+  box-shadow: var(--shadow);
+  transition: transform .15s ease;
+}
+.card:hover {
+  transform: translateY(-3px);
+}
+.card-icon {
+  width: 56px;
+  height: 56px;
+  margin-bottom: 1rem;
+}
+.card h3 {
+  font-size: 1.2rem;
+  margin-bottom: .6rem;
+}
+.card p {
+  color: var(--color-gray);
+  font-size: .95rem;
+  line-height: 1.4;
+}
+
+/* Prix / Forfait */
+.price-card {
+  position: relative;
+  max-width: 720px;
+  margin: 0 auto;
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 1.2rem;
+  padding: 2rem 2.4rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+.badge {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  background-color: var(--color-accent);
+  color: #05383a;
+  padding: .4rem .8rem;
+  border-radius: .6rem;
+  font-size: .75rem;
+  font-weight: 700;
+  box-shadow: var(--shadow);
+}
+.price-content h2 {
+  margin-top: 0;
+  font-size: 1.6rem;
+}
+.price {
+  font-size: 2.2rem;
+  font-weight: 700;
+  margin-bottom: .4rem;
+  color: var(--color-dark);
+}
+.price-list {
+  list-style-type: none;
+  padding: 0;
+  margin: .8rem 0 0;
+}
+.price-list li {
+  margin-bottom: .4rem;
+  padding-left: 1.2rem;
+  position: relative;
+  font-size: .95rem;
+  color: var(--color-gray);
+}
+.price-list li::before {
+  content: "\2022";
+  position: absolute;
+  left: 0;
+  top: 0;
+  color: var(--color-primary);
+}
+
+/* Témoignages */
+.testimonials {
+  display: grid;
+  gap: 1.5rem;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+}
+.testimonial-card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  padding: 1.5rem;
+  box-shadow: var(--shadow);
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+.testimonial-card .avatar {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: .6rem;
+}
+.testimonial-card p {
+  font-size: .95rem;
+  color: var(--color-dark);
+  flex-grow: 1;
+}
+.testimonial-card .meta {
+  font-size: .8rem;
+  color: var(--color-gray);
+  font-style: italic;
+}
+
+/* Contact */
+.contact-card {
+  background-color: var(--color-card);
+  border: 1px solid var(--color-border);
+  border-radius: 1rem;
+  padding: 2rem;
+  box-shadow: var(--shadow);
+  max-width: 720px;
+  margin: 0 auto;
+}
+.contact-card h2 {
+  margin-top: 0;
+}
+.contact-card p {
+  color: var(--color-gray);
+}
+.field {
+  margin-bottom: 1rem;
+}
+.field label {
+  display: block;
+  margin-bottom: .4rem;
+  font-weight: 600;
+}
+.field input,
+.field textarea {
+  width: 100%;
+  padding: .6rem .8rem;
+  border: 1px solid var(--color-border);
+  border-radius: .5rem;
+  font: inherit;
+  color: var(--color-dark);
+  background-color: #ffffff;
+}
+.field input:focus,
+.field textarea:focus {
+  outline: 3px solid var(--color-secondary);
+}
+.alt-contacts p {
+  margin: .4rem 0;
+  font-size: .95rem;
+}
+.alt-contacts a {
+  color: var(--color-dark);
+  text-decoration: none;
+}
+.alt-contacts a:hover {
+  text-decoration: underline;
+}
+
+/* Pied de page */
+.site-footer {
+  background-color: var(--color-footer-bg);
+  color: var(--color-footer-text);
+  padding: 2rem 0;
+}
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  align-items: center;
+  justify-content: center;
+}
+.footer-nav {
+  display: flex;
+  gap: 1.4rem;
+}
+.footer-nav a {
+  color: var(--color-footer-text);
+  text-decoration: none;
+  font-size: .9rem;
+}
+.footer-nav a:hover {
+  text-decoration: underline;
+}
+
+/* Responsive ajustements */
+@media (min-width: 768px) {
+  .footer-content {
+    flex-direction: row;
+    justify-content: space-between;
+  }
+}
