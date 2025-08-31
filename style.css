@@ -424,3 +424,45 @@ li {
   opacity: 1;
   transform: translateY(0);
 }
+
+/* ===== Parallax system (layers) ===== */
+.parallax{
+  position: relative;
+  perspective: 1px;               /* 3D context */
+  transform-style: preserve-3d;
+  overflow: hidden;
+}
+.parallax .layer{
+  position:absolute; inset:-5% -5% auto -5%;
+  width:110%; height:auto; object-fit:cover;
+  will-change: transform;
+  pointer-events:none; z-index:0;
+  filter: saturate(1.02) contrast(1.03);
+}
+.parallax .hero-content,
+.parallax .container{ position:relative; z-index:2 }
+
+/* Gentle float on the top-most layer for premium feel */
+@keyframes float {
+  0%{ transform: translate3d(0,0,0) scale(1) }
+  50%{ transform: translate3d(0,-4px,0) scale(1.005) }
+  100%{ transform: translate3d(0,0,0) scale(1) }
+}
+.parallax .layer:last-of-type{ animation: float 6s ease-in-out infinite }
+
+/* Sticky reveal block you can use for decorative figures */
+.sticky-reveal{
+  position: sticky; top: 10vh; height: 80vh;
+  mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
+/* Scroll reveals (with subtle zoom) */
+.reveal{ opacity:0; transform: translateY(40px) scale(.98); transition:.6s ease-out }
+.reveal.in-view{ opacity:1; transform: translateY(0) scale(1) }
+
+/* Motion and mobile fallback */
+@media (max-width:768px), (prefers-reduced-motion:reduce){
+  .parallax{ perspective:none }
+  .parallax .layer{ display:none }
+}
