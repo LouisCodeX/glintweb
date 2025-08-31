@@ -142,15 +142,21 @@ li {
 
 /* Hero section */
 .hero {
+  /* Section héro avec image de fond et effet parallax */
+  position: relative;
   overflow: hidden;
-  background: linear-gradient(120deg, var(--color-primary) 0%, var(--color-secondary) 100%);
-  padding: 3rem 0;
+  /* L'image de fond est définie via les classes .bg-peach/.bg-teal/.bg-pink */
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  padding: 4rem 0;
+  color: var(--color-dark);
 }
 .hero-content {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  justify-content: space-between;
+  justify-content: flex-start;
   gap: 2rem;
 }
 .hero-text {
@@ -375,10 +381,46 @@ li {
   text-decoration: underline;
 }
 
+/* Arrière‑plans parallax personnalisés pour différentes sections */
+.bg-peach {
+  background-image: url('images/crane_peach.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.bg-teal {
+  background-image: url('images/crane_teal.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
+.bg-pink {
+  background-image: url('images/crane_pink.png');
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+}
+
 /* Responsive ajustements */
 @media (min-width: 768px) {
   .footer-content {
     flex-direction: row;
     justify-content: space-between;
   }
+}
+
+/* Effets de révélation au scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+}
+.reveal.in-view {
+  opacity: 1;
+  transform: translateY(0);
 }

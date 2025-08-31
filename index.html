@@ -27,40 +27,37 @@
     </header>
 
     <!-- Section Héro, avec slogan et illustration -->
-    <section class="hero">
+    <section class="hero bg-peach">
       <div class="container hero-content">
         <div class="hero-text">
           <h1>Votre site vitrine professionnel en&nbsp;1&nbsp;semaine</h1>
-          <p>Maquette en 72 h. Mise en ligne en une semaine. Sans risque : vous ne payez que si vous validez.</p>
+          <p>Maquette en&nbsp;72 h. Mise en ligne en une semaine. Sans risque : vous ne payez que si vous validez.</p>
           <a href="#contact" class="btn btn-large">Demander un devis gratuit</a>
-        </div>
-        <div class="hero-image">
-          <img src="images/hero.png" alt="Illustration de création de site web" loading="lazy">
         </div>
       </div>
     </section>
 
     <!-- Section Services -->
-    <section id="services" class="section services">
+    <section id="services" class="section services bg-teal">
       <div class="container">
         <h2>Nos services</h2>
         <div class="cards">
-          <article class="card">
+          <article class="card reveal">
             <img src="images/icon_create.png" alt="Création de site" class="card-icon">
             <h3>Création de sites vitrines</h3>
             <p>Conception sur‑mesure, responsive et optimisée pour le référencement local. Un design unique adapté à votre activité.</p>
           </article>
-          <article class="card">
+          <article class="card reveal">
             <img src="images/icon_redesign.png" alt="Refonte de site" class="card-icon">
             <h3>Refonte&nbsp;&amp;&nbsp;relooking</h3>
             <p>Modernisation de votre site existant afin de refléter votre image et de convaincre de nouveaux clients.</p>
           </article>
-          <article class="card">
+          <article class="card reveal">
             <img src="images/icon_support.png" alt="Accompagnement" class="card-icon">
             <h3>Accompagnement complet</h3>
             <p>Achat et configuration du nom de domaine, hébergement, e‑mail professionnel, analytics : nous nous chargeons de tout.</p>
           </article>
-          <article class="card">
+          <article class="card reveal">
             <img src="images/icon_update.png" alt="Mises à jour" class="card-icon">
             <h3>Mises à jour simplifiées</h3>
             <p>Intégration d’un mini‑éditeur de contenu pour modifier textes et images en toute autonomie.</p>
@@ -70,14 +67,14 @@
     </section>
 
     <!-- Section Forfait/Prix -->
-    <section id="forfait" class="section forfait">
+    <section id="forfait" class="section forfait bg-pink">
       <div class="container">
-        <div class="price-card">
+        <div class="price-card reveal">
           <span class="badge">Satisfait ou remboursé</span>
           <div class="price-content">
             <h2>Un seul forfait clair</h2>
             <p class="price">590 € TTC</p>
-            <p>Maquette sous 48 h et site en ligne en une semaine. Paiement uniquement à validation : pas de surprise.</p>
+            <p>Maquette sous 72 h et site en ligne en une semaine. Paiement uniquement à validation : pas de surprise.</p>
             <ul class="price-list">
               <li>Design sur‑mesure et responsive</li>
               <li>Optimisation mobile et SEO local</li>
@@ -91,21 +88,21 @@
     </section>
 
     <!-- Section Témoignages -->
-    <section id="avis" class="section avis">
+    <section id="avis" class="section avis bg-teal">
       <div class="container">
         <h2>Ils nous font confiance</h2>
         <div class="testimonials">
-          <article class="testimonial-card">
+          <article class="testimonial-card reveal">
             <img src="images/avatar_amandine.png" alt="Portrait d’Amandine" class="avatar">
             <p>« J’avais un site vieillissant. En quelques jours, GlintWeb l’a transformé en une vitrine moderne et efficace. Mes clientes adorent ! »</p>
             <span class="meta">Amandine — coiffeuse</span>
           </article>
-          <article class="testimonial-card">
+          <article class="testimonial-card reveal">
             <img src="images/avatar_malik.png" alt="Portrait de Malik" class="avatar">
             <p>« Service rapide et sans mauvaise surprise. Je recommande vivement cette offre sans engagement. »</p>
             <span class="meta">Malik — boulanger</span>
           </article>
-          <article class="testimonial-card">
+          <article class="testimonial-card reveal">
             <img src="images/avatar_claire.png" alt="Portrait de Claire" class="avatar">
             <p>« J’ai enfin un site qui donne envie de venir au salon. Merci GlintWeb ! »</p>
             <span class="meta">Claire — esthéticienne</span>
@@ -115,9 +112,9 @@
     </section>
 
     <!-- Section Contact -->
-    <section id="contact" class="section contact">
+    <section id="contact" class="section contact bg-peach">
       <div class="container">
-        <div class="contact-card">
+        <div class="contact-card reveal">
           <h2>Contactez‑nous</h2>
           <p>Vous souhaitez en savoir plus ? Remplissez le formulaire ci‑dessous ou contactez‑nous directement.</p>
           <form action="mailto:louis.benassy@gmail.com" method="post" enctype="text/plain">
@@ -155,5 +152,8 @@
         </nav>
       </div>
     </footer>
+
+    <!-- JavaScript pour les animations et effets de défilement -->
+    <script src="script.js"></script>
   </body>
 </html>
